@@ -22,6 +22,6 @@ for i in range(n):
             ans+=1
             arr[i][j]=0
             vil.append(dfs(i,j))
-print(ans)
+#print(ans)
 for x in sorted(vil):
     print(x)
