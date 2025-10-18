@@ -10,3 +10,5 @@ print(dataList) #[1, 33, 44, 4]
 dataList = reset()
 print(dataList)
 
+data_list = list(range(10, 110, 10))
+print(dataList)
