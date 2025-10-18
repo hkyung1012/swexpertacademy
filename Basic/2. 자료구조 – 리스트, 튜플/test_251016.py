@@ -1,6 +1,6 @@
 #List test
 def reset():
-    return [1, 2, 3, 4]
+    return [10, 20, 30, 40]
 
 #list 의 index 범위!. 마지막 값은 실제 index 아님!!
 dataList = [1,2,3,4]
