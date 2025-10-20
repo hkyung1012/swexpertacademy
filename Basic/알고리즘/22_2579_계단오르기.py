@@ -1,0 +1,56 @@
+"""
+https://www.acmicpc.net/problem/2579
+점프 규칙: 계단은 한 번에 1칸 또는 2칸씩 오를 수 있습니다. (이것은 이전 문제와 동일합니다.)
+연속 밟기 금지: 세 칸의 계단을 연속해서 밟을 수 없습니다.즉, $i$번째 계단을 밟았다면,
+다음은 i+1 또는 i+2로 이동할 수 있지만, .., i-2, i-1, i 를 모두 밟는 것은 불가능합니다.
+도착점 필수: 마지막 계단은 반드시 밟아야 합니다.
+
+**"세 계단을 연속해서 밟을 수 없다"**는 제약 조건 때문에, i번째 계단을 밟았을 때 이전 상태가 무엇이었는지를 명확하게 구분
+"""
+import sys
+sys.stdin = open("2579_input.txt", "r")
+
+# 입력: 입력의 첫째 줄에 계단의 개수
+# 출력: 첫째 줄에 계단 오르기 게임에서 얻을 수 있는 총 점수의 최댓값
+
+T = int(input())
+print(T)
+
+for i in range(T):
+    T1 = int(sys.stdin.readline().strip())
+    print(T1)
+
+# 최대 점수를 계산하는 동적 계획법 함수 (단일 테스트 케이스 처리)
+def solve_stair_climbing_case():
+    try:
+        n_line = sys.stdin.readline().strip()  # 입력의 첫째 줄
+        if not n_line:
+            return None # 더 이상 입력이 없으면 None 반환
+        N = int(n_line)
+    except:
+        return None
+
+
+    if N == 0:
+        return 0
+
+    # 계단점수 리스트
+    scores = [0] + [int(sys.stdin.readline().strip()) for _ in range(N)]
+            # for _ : **"반복 횟수는 필요하지만, 반복되는 동안의 각 순서(인덱스 또는 값)는 사용하지 않겠다"*
+
+    if N == 1:
+        return scores[1]
+
+    if N == 2 :
+        return scores[1] + scores[2]
+
+    # --- DP 테이블 정의 및 초기화 ---
+    # dp[i][1]: i번째 계단을 밟았고, 직전에 1칸을 점프해 온 경우의 최대 점수
+    # dp[i][2]: i번째 계단을 밟았고, 직전에 2칸을 점프해 온 경우의 최대 점수
+    dp = [ [0] * 3 for _ in range(N + 1)]
+         # [0, 0, 0] => 1 row
+    
+
+    # 1번째 계단
+    dp[1][1] = scores[1]
+    dp[1][2] = scores[1]
