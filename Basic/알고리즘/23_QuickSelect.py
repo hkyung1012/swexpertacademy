@@ -72,10 +72,3 @@ k_text = f"{k}번째"
 
 # 알고리즘 실행
 result = quick_select(L, k)
-
-# 정답 확인 (검증용, 실제 알고리즘의 일부는 아님)
-# print(f"정렬된 리스트: {sorted(L)}")
-
-print(f"주어진 리스트: {L}")
-print(f"찾으려는 순위: {k_text}로 작은 원소")
-print(f"\nQuick Select 결과: {result}")
