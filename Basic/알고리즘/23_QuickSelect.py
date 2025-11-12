@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=ymgm5ER6OuQ&list=PLsMufJgu5932XYejsOwcUDJ2F75f56
 만약 피벗의 위치가 k보다 작다면, 피벗 오른쪽 부분에서 다시 k번째 원소를 찾습니다.
 만약 피벗의 위치가 k보다 크다면, 피벗 왼쪽 부분에서 k번째 원소를 찾습니다.
 이 과정을 재귀적으로 반복합니다.
-11/09 다시 하기
+
 """
 
 
