@@ -7,6 +7,6 @@ while True:
 
     except IndexError:
         print(-1)
-    except value    except KeyboardInterrupt:
+    except KeyboardInterrupt:
         print("\n프로그램을 종료합니다.")
         break
